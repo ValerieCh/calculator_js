@@ -18,8 +18,13 @@ document.querySelector('.point')
     .addEventListener('click', pointPressed);
 
 function pointPressed(ev){
+    let operToStr = display.value.replace(/[\+\-\*\/]/g, ' ');
+    operToStr = operToStr.split(" ");
+    if(!(operToStr.pop().includes('.'))){
     display.value += ev.target.innerText;
 }
+}
+
 
 document.querySelector('.eq')
     .addEventListener('click', calculate);
@@ -35,10 +40,7 @@ function deleted(){
     display.value = '';
 }
 
-document.querySelector('.clear')
-    .addEventListener('click', cleared);
 
-function cleared(ev){
-    display.value = document.querySelector('.display').split;
-}
+
+
 
